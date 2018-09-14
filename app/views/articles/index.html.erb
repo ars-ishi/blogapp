@@ -1,0 +1,11 @@
+<div class="cp_cssslider">
+  <div class="cp_slidewrapper">
+    <% @latest_articles.each do |article| %>
+      <div class="cp_slide_item"><a href="/articles/<%= article.id %>" data-turbolinks="false"><img src="<%= article.image %>"></a></div>
+    <% end %>
+  </div>
+</div>
+
+<% @articles.each do |article| %>
+  <%= render partial: "article", locals: { article: article } %>
+<% end %>

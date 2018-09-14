@@ -1,0 +1,398 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont,
+             "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+}
+
+a {
+  color: #D77976;
+}
+
+nav .brand-logo {
+  font-size: 1.5rem;
+}
+
+a.brand-logo::after {
+  border-bottom: solid 2px #fff;
+  bottom: 0px;
+  content: "";
+  display: block;
+  transition: all .5s ease;
+  width: 0;
+}
+
+a.brand-logo:hover::after {
+  width: 100%;
+}
+
+.object-image img, .object-image {
+  width:100%;
+  height:auto;
+  display: block;
+}
+
+.noImage {
+  width: 100%;
+  background: #eee;
+  line-height: 100px;
+  text-align: center;
+}
+
+.index_img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.newPagination {
+  font-size: 1.2em;
+}
+
+.newPagination::before {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+.siteName {
+  font-family: 'Pacifico', cursive;
+  font-size: .8em;
+  letter-spacing: .2em;
+}
+
+.article_title {
+margin: 20px auto;
+padding: 0.5em;
+font-size: 1.5em;
+color: #494949;
+border-left: solid 5px #f55c6e;
+}
+
+.textOverflow {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.overTitle {
+  background: rgba(0,0,0,0.2);
+  width: 100%;
+  min-height: 84px;
+}
+
+.navWrap {
+  max-width: 960px;
+}
+
+.wideButton {
+  width: 100%;
+  background: #ee6e73;
+}
+
+.miniButton {
+  background: #ee6e73;
+}
+
+.btn:hover, .btn-large:hover, .btn-small:hover {
+  background: #e57373;
+}
+
+i.mini {
+  font-size: 1.5rem;
+  vertical-align: 25%;
+}
+
+.tipDate {
+  vertical-align: 35%;
+  font-size: .8rem;
+}
+
+.detailText {
+  font-family: -apple-system, BlinkMacSystemFont,
+             "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  padding-top: 10px;
+  color: #424242;
+  letter-spacing: 1.5px;
+  line-height: 1.75;
+  min-height: 36px;
+}
+
+footer {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  margin-top: 20px;
+  color: #616161;
+}
+
+footer::before {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+ul.theme {
+  width: 100%;
+  margin: 0 auto;
+  background: #eee;
+}
+
+ul.theme::after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+ul.theme li {
+  font-size: 1.2em;
+  color: #9e9e9e;
+  float: left;
+  width: 33%;
+  text-align: center;
+  padding: 10px;
+  background: #eee;
+}
+
+ul.theme li:nth-child(2) {
+  width: 34%;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+.checkbox {
+  box-sizing: border-box;
+-webkit-transition: background-color 0.2s linear;
+transition: background-color 0.2s linear;
+position: relative;
+display: inline-block;
+margin: 0 20px 8px 0;
+padding: 12px 12px 12px 42px;
+border-radius: 8px;
+background-color: #f6f7f8;
+vertical-align: middle;
+cursor: pointer;
+}
+
+.checkbox:hover {
+  background-color: #e0f2f1;
+}
+.checkbox:hover:after {
+  border-color: #4db6ac;
+}
+
+.checkbox:after {
+  -webkit-transition: border-color 0.2s linear;
+  transition: border-color 0.2s linear;
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  display: block;
+  margin-top: -10px;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #bbb;
+  border-radius: 6px;
+  content: '';
+}
+
+.checkbox:before {
+  -webkit-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
+  position: absolute;
+  top: 50%;
+  left: 21px;
+  display: block;
+  margin-top: -7px;
+  width: 5px;
+  height: 9px;
+  border-right: 3px solid #4db6ac;
+  border-bottom: 3px solid #4db6ac;
+  content: '';
+  opacity: 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+input[type=checkbox]:checked + .checkbox:before {
+  opacity: 1;
+}
+
+@media screen and (max-width:480px) {
+  .noImage, .index_img {
+    height: 180px;
+    line-height: 180px;
+  }
+}
+
+@media screen and (min-width:480px) and ( max-width:600px) {
+  .noImage, .index_img {
+    height: 200px;
+    line-height: 200px;
+  }
+}
+
+@media screen and (min-width:600px) and ( max-width:960px) {
+  .noImage, .index_img {
+    height: 180px;
+    line-height: 180px;
+  }
+
+  .row .col.m6 {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width:960px) {
+  .noImage, .index_img {
+    height: 250px;
+    line-height: 250px;
+  }
+}
+
+.cp_slide_item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cp_cssslider {
+width: 700px;
+height: 400px;
+overflow: hidden;
+margin: 2em auto;
+border: 5px solid #ffffff;
+box-shadow:0px 0px 1px 0px rgba(0,0,0,0.4);
+}
+
+.cp_slide_item {
+width: 700px;
+height: 400px;
+float: left;
+position: relative;
+}
+.cp_slidewrapper {
+width: 500%;
+position: relative;
+left: 0;
+animation: slider 20s infinite ease;
+}
+
+@keyframes slider {
+  25% {
+  transform: translateX(0);
+  }
+
+  25% {
+  transform: translateX(-700px);
+  }
+
+  50% {
+  transform: translateX(-1400px);
+  }
+
+  75% {
+  transform: translateX(-2100px);
+  }
+
+  100% {-webkit-transform: translateX(0);
+  transform: translateX(0);
+  }
+}
+
+
+@media screen and (max-width:650px) {
+  .cp_cssslider {
+  width: 500px;
+  height: 340px;
+  }
+
+  .cp_slide_item {
+  width: 500px;
+  height: 340px;
+  }
+
+  .cp_slidewrapper {
+  width: 500%;
+  position: relative;
+  left: 0;
+  animation: slider 20s infinite ease;
+  }
+
+  @keyframes slider {
+    25% {
+    transform: translateX(0);
+    }
+
+    25% {
+    transform: translateX(-500px);
+    }
+
+    50% {
+    transform: translateX(-1000px);
+    }
+
+    75% {
+    transform: translateX(-1500px);
+    }
+
+    100% {-webkit-transform: translateX(0);
+    transform: translateX(0);
+    }
+  }
+}
+
+@media screen and (max-width:480px) {
+  .cp_cssslider {
+  width: 300px;
+  height: 200px;
+  }
+
+  .cp_slide_item {
+  width: 300px;
+  height: 200px;
+  }
+
+  .cp_slidewrapper {
+  width: 500%;
+  position: relative;
+  left: 0;
+  animation: slider 20s infinite ease;
+  }
+
+  @keyframes slider {
+    25% {
+    transform: translateX(0);
+    }
+
+    25% {
+    transform: translateX(-300px);
+    }
+
+    50% {
+    transform: translateX(-600px);
+    }
+
+    75% {
+    transform: translateX(-900px);
+    }
+
+    100% {-webkit-transform: translateX(0);
+    transform: translateX(0);
+    }
+  }
+}
+
+.fadein {
+  opacity : 0;
+  transform : translate(0, 40px);
+  transition : all 300ms;
+}
+.fadein.scrollin {
+  opacity : 1;
+  transform : translate(0, 0);
+}
+
+.changeColor {
+  transition: 1.0s ;
+}

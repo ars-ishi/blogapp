@@ -1,0 +1,28 @@
+<h2 class="article_title">投稿フォーム</h2>
+  <%= form_for(@article) do |f| %>
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.text_field :title, placeholder: "タイトルを入力！" %>
+        <%= f.label :title, class: "active" %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.text_field :image, placeholder: "画像のURLを貼り付けよう！" %>
+        <%= f.label :image, class: "active" %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.text_area :text, placeholder: '記事の本文を入力してね！', class: "materialize-textarea" %>
+        <%= f.label :text, class: "active" %>
+      </div>
+    </div>
+
+    <div class="row">
+    <%= button_tag type: "submit", class: "btn waves-effect btn-large wideButton" do %>投稿する<% end %>
+    </div>
+
+  <% end %>

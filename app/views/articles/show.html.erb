@@ -1,0 +1,27 @@
+<div class="col s12 m12">
+  <div class="card">
+    <div class="card-image">
+      <object style="width:100%;display: block;" data="<%= @article.image %>">
+          <div class="noImage index_img"><span style="color:#bdbdbd;">No image</span></div>
+      </object>
+      <span class="card-title textOverflow overTitle"><%= @article.title %></span>
+    </div>
+    <div class="card-content">
+      <div class="chip">
+        <i class="mini material-icons">today</i>
+        <span class="tipDate"><%= @article.created_at.strftime('%Y.%m.%d') %></span>
+      </div>
+      <div class="chip">
+        <i class="mini material-icons">person_pin</i>
+        <span class="tipDate"><%= @article.user.nickname %></span>
+      </div>
+      <%= simple_format(@article.text, class: 'detailText') %>
+    </div>
+    <% if user_signed_in? && @article.user_id.to_i == current_user.id.to_i %>
+    <div class="card-action">
+        <%= link_to "編集", "/articles/#{@article.id}/edit", class: "btn waves-effect grey lighten-4 grey-text text-darken-2" %>
+        <%= link_to "削除", "/articles/#{@article.id}", class: "btn waves-effect grey lighten-4 grey-text text-darken-2", method: :"delete" %>
+    </div>
+    <% end %>
+  </div>
+</div>

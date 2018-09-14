@@ -1,0 +1,28 @@
+<h2 class="article_title">投稿内容を編集する</h2>
+  <%= form_for(@article) do |f| %>
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.text_field :title %>
+        <%= f.label :title, class: "active" %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.text_field :image %>
+        <%= f.label :image, class: "active" %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.text_area :text, class: "materialize-textarea" %>
+        <%= f.label :text, class: "active" %>
+      </div>
+    </div>
+
+    <div class="row">
+    <%= button_tag type: "submit", class: "btn waves-effect btn-large wideButton" do %>編集内容を反映<% end %>
+    </div>
+
+  <% end %>
