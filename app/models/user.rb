@@ -4,5 +4,5 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :favorites, dependent: :destroy
-  has_many :articles, througth: :favorites
+  has_many :articles, through: :favorites
 end
