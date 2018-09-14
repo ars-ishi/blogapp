@@ -14,7 +14,11 @@
       </div>
       <div class="chip">
         <i class="mini material-icons">person_pin</i>
-        <span class="tipDate"><%= article.user.nickname %></span>
+        <span class="tipDate"><%= User.find(article.user_id.to_i).nickname %></span>
+      </div>
+      <div class="chip">
+        <i class="mini material-icons">favorite</i>
+        <span class="tipDate"><%= article.favorite_ids.length %></span>
       </div>
       <p class="textOverflow detailText"><%= article.text %></p>
     </div>
