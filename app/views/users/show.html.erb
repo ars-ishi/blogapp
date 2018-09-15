@@ -1,0 +1,11 @@
+<div style="min-height:600px">
+  <h2 class="article_title"><%= @user.nickname %>のお気に入り</h2>
+  <% if @counts !=0 %>
+    <% @favorites.each do |favorite| %>
+      <%= render partial: "articles/article", locals: { article: Article.find(favorite.article_id) } %>
+    <% end %>
+  <% else %>
+    <div class="detailText row">まだお気に入りはありません。みんなの投稿をみてお気に入りを見つけましょう！</div>
+    <div class="btn btn-large wideButton"><a href="/articles" class="white-text" data-turbolinks="false">みんなの投稿をみる</a></div>
+  <% end %>
+</div>
