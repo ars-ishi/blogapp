@@ -13,15 +13,26 @@
       </div>
       <div class="chip">
         <i class="mini material-icons">person_pin</i>
-        <span class="tipDate"><%= @article.user.nickname %></span>
+        <span class="tipDate"><%= User.find(@article.user_id.to_i).nickname %></span>
+      </div>
+      <div class="chip">
+        <i class="mini material-icons">favorite</i>
+        <span class="tipDate"><%= @article.favorite_ids.length %></span>
       </div>
       <%= simple_format(@article.text, class: 'detailText') %>
     </div>
-    <% if user_signed_in? && @article.user_id.to_i == current_user.id.to_i %>
-    <div class="card-action">
-        <%= link_to "編集", "/articles/#{@article.id}/edit", class: "btn waves-effect grey lighten-4 grey-text text-darken-2" %>
-        <%= link_to "削除", "/articles/#{@article.id}", class: "btn waves-effect grey lighten-4 grey-text text-darken-2", method: :"delete" %>
-    </div>
+    <% if user_signed_in? %>
+      <div class="card-action">
+        <% if user_signed_in? && @article.user_id.to_i == current_user.id.to_i %>
+          <%= link_to "編集", "/articles/#{@article.id}/edit", class: "btn waves-effect grey lighten-4 grey-text text-darken-2" %>
+          <%= link_to "削除", "/articles/#{@article.id}", class: "btn waves-effect grey lighten-4 grey-text text-darken-2", method: :"delete" %>
+        <% end %>
+        <% if !Favorite.exists?(user_id: current_user.id, article_id:@article.id ) %>
+          <%= link_to "お気に入り", article_add_path(@article), class: "btn waves-effect grey lighten-4 grey-text text-darken-2", method: :post %>
+          <% else %>
+          <%= link_to "お気に入り解除", article_add_path(@article), class: "btn waves-effect grey lighten-4 grey-text text-darken-2", method: :delete %>
+        <% end %>
+      </div>
     <% end %>
   </div>
 </div>

@@ -13,8 +13,12 @@
         <span class="tipDate"><%= article.created_at.strftime('%Y.%m.%d') %></span>
       </div>
       <div class="chip">
-        <i class="mini material-icons">person_pin</i>
-        <span class="tipDate"><%= article.user.nickname %></span>
+        <i class="mini material-icons">person</i>
+        <span class="tipDate"><%= User.find(article.user_id.to_i).nickname %></span>
+      </div>
+      <div class="chip">
+        <i class="mini material-icons">favorite</i>
+        <span class="tipDate"><%= article.favorite_ids.length %></span>
       </div>
       <p class="textOverflow detailText"><%= article.text %></p>
     </div>
