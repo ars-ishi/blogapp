@@ -13,7 +13,7 @@
         <span class="tipDate"><%= article.created_at.strftime('%Y.%m.%d') %></span>
       </div>
       <div class="chip">
-        <i class="mini material-icons">person_pin</i>
+        <i class="mini material-icons">person</i>
         <span class="tipDate"><%= User.find(article.user_id.to_i).nickname %></span>
       </div>
       <div class="chip">
